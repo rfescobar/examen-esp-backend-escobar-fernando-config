@@ -1,6 +1,8 @@
 server:
   port: ${PORT:${SERVER_PORT:0}}
 spring:
+  application:
+    name: serie-service
   mongodb:
     embedded:
       version: 4.0.2
@@ -8,8 +10,11 @@ spring:
     mongodb:
       database: test
       port: 27017
-  application:
-    name: serie-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   zipkin:
     baseUrl: http://localhost:9411/
 eureka:
